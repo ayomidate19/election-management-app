@@ -1,0 +1,40 @@
+/* Exact INEC Style Table Layout */
+.pu-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    margin-top: 20px;
+    background-color: #ffffff;
+    border: 1px solid #dee2e6; /* Clean light gray outer border */
+}
+
+/* Header Styling - White background with bold dark text */
+.pu-table th {
+    background-color: #ffffff;
+    color: #212529;
+    padding: 16px 12px;
+    text-align: left;
+    font-weight: 700;
+    font-size: 15px;
+    border: 1px solid #dee2e6; /* Grid lines for headers */
+}
+
+/* Data Cell Styling - Clean borders and uppercase presentation */
+.pu-table td {
+    padding: 14px 12px;
+    border: 1px solid #dee2e6; /* Grid lines between cells */
+    font-size: 14px;
+    color: #212529;
+    text-transform: uppercase; /* Automatically forces text to uppercase */
+    vertical-align: middle;
+}
+
+/* Alternating Row Striping */
+.pu-table tbody tr:nth-child(even) {
+    background-color: #f8f9fa; /* Very subtle gray for alternate rows */
+}
+
+/* Row Hover effect */
+.pu-table tbody tr:hover {
+    background-color: #f1f3f5;
+}

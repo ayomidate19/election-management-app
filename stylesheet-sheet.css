@@ -1,0 +1,31 @@
+body{
+    background-color: #894949;
+    font-family: Arial, sans-serif;
+    margin: 40px;
+    padding: 0;  
+      
+}   
+
+ .css-table {
+  display: table;
+  width: 100%;
+  border-collapse: collapse; /* Works with display: table */
+}
+
+.table-header {
+  display: table-header-group;
+  font-weight: bold;
+  background-color: #333;
+  color: white;
+}
+
+.table-row {
+  display: table-row;
+}
+
+.table-cell {
+  display: table-cell;
+  padding: 10px;
+  border: 1px solid #ccc;
+  
+}

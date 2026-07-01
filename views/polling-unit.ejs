@@ -1,0 +1,148 @@
+<link rel="stylesheet" href="/stylesheet-polling-unit.css">
+
+<header>
+  <nav>
+    <ul>
+      <li><a href="/sheet">Back</a></li>
+    </ul>
+  </nav>
+  <hr>
+</header>
+
+<footer>
+  <h3>Election Party</h3>
+  <h5>At a polling unit, a citizen can either register to vote or vote. It is advisable to select a Polling Unit close
+    to your area of residence due to</h5>
+
+  <h5>You can locate your polling unit by using the Polling Unit Locator Tool.</h5>
+
+  <h5>
+    North West: 38,358
+    <br>South West: 28,830
+    <br>North East: 21,750
+    <br>North Central: 21,737
+    <br>South South: 20,847
+    <br>South East: Lowest (Data reflects 176,846 total nationwide)
+  </h5>
+</footer>
+
+<h5>To view your polling unit, follow the steps below;</h5>
+<h5>1. Select State (This is the state you would be voting in)</h5>
+<h5>2. Select LGA (This is the LGA in which you live)</h5>
+<h5>3. Select Ward</h5>
+<h5>4. Click "Search"</h5>
+<br>
+
+<!-- State Dropdown -->
+<form id="searchForm" class="search-container">
+    <!-- 1. State Dropdown (Ensure it has an id) -->
+    <select id="stateSelect">
+        <option value="">--Select State--</option>
+        <option value="Lagos">Lagos</option>
+        <option value="Kano">Kano</option>
+        <option value="Rivers">Rivers</option>
+        <option value="Kaduna">Kaduna</option>
+        <option value="Oyo">Oyo</option>
+        <option value="Enugu">Enugu</option>
+        <option value="Borno">Borno</option>
+        <option value="Anambra">Anambra</option>
+        <option value="Katsina">Katsina</option>
+        <option value="Abia">Abia</option>
+        <option value="Adamawa">Adamawa</option>
+        <option value="Akwa">Akwa</option>
+        <option value="Bayelsa">Bayelsa</option>
+        <option value="Benue">Benue</option>
+        <option value="Cross">Cross</option>
+        <option value="Ebonyi">Ebonyi</option>
+        <option value="Ekiti">Ekiti</option>
+        <option value="Gombe">Gombe</option>
+        <option value="Imo">Imo</option>
+        <option value="Jigawa">Jigawa</option>
+        <option value="Kebbi">Kebbi</option>
+        <option value="Kogi">Kogi</option>
+        <option value="Kwara">Kwara</option>
+        <option value="Nasarawa">Nasarawa</option>
+        <option value="Niger">Niger</option>
+        <option value="Plateau">Plateau</option>
+        <option value="Sokoto">Sokoto</option>
+        <option value="Taraba">Taraba</option>
+        <option value="Yobe">Yobe</option>
+        <option value="Zamfara">Zamfara</option>
+        <option value="FCT">FCT</option>
+        <option value="Ondo">Ondo</option>
+        
+        <!-- Add other states here -->
+         
+    </select>
+
+    <!-- 2. LGA Dropdown (Ensure it has an id) -->
+    <select id="lgaSelect" disabled>
+
+
+           <option value="">--Select Local Government--</option>
+    </select>
+
+    <!-- 3. Ward Dropdown (Your existing select element) -->
+    <select id="wardSelect" disabled>
+        <option value="">--Select Ward--</option>
+    </select>
+    <br>
+
+    <!-- 4. Click Search Button -->
+    <button type="submit" id="searchButton">Search</button>
+    
+    <!-- Below your search form -->
+    <div id="resultsContainer" class="results-table-container"></div>
+</form>
+
+    <table style="width: 100%; border-collapse: collapse; margin-top: 15px; font-family: Arial, sans-serif;">
+        <thead>
+            <tr style="background-color: #005f00; color: white; text-align: left;">
+                <th style="padding: 10px; border: 1px solid #ddd;">ID</th>
+                <th style="padding: 10px; border: 1px solid #ddd;">Unit Name</th>
+                <th style="padding: 10px; border: 1px solid #ddd;">Sheet Code</th>
+                <th style="padding: 10px; border: 1px solid #ddd;">Counting Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% if (units.length === 0) { %>
+                <tr>
+                    <td colspan="4" style="padding: 15px; text-align: center; color: #888; font-style: italic;">
+                        No polling units currently found in database. Add records in Studio!
+                    </td>
+                </tr>
+            <% } else { %>
+                <% units.forEach(unit => { %>
+                    <tr style="border-bottom: 1px solid #ddd; background-color: #fff;">
+                        <td style="padding: 10px; border: 1px solid #ddd;"><%= unit.id %></td>
+                        <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;"><%= unit.name %></td>
+                        <td style="padding: 10px; border: 1px solid #ddd; color: #444;"><%= unit.sheetCode %></td>
+                        <td style="padding: 10px; border: 1px solid #ddd;">
+                                                  <td style="padding: 10px; border: 1px solid #ddd;">
+                            <% if (unit.isReady) { %>
+                                <span style="padding: 3px 6px; border-radius: 4px; font-size: 12px; font-weight: bold; background-color: #e2f0d9; color: #385723;">
+                                    Results Transmitted
+                                </span>
+                            <% } else { %>
+                                <span style="padding: 3px 6px; border-radius: 4px; font-size: 12px; font-weight: bold; background-color: #fff2cc; color: #7f6000;">
+                                    In Progress...
+                                </span>
+                            <% } %>
+                        </td>
+
+                        </td>
+                    </tr>
+                <% }) %>
+            <% } %>
+        </tbody>
+    </table>
+
+
+
+<ul>
+        <li><img src="images/PDP.png" height="25" alt="Sample Image"></li>
+        <li><img src="images/LLP.jpeg" height="25" alt="Sample Image"></li>
+        <li><img src="images/APC.jpeg" height="25" alt="Sample Image"></li>
+</ul>
+
+<script src="/pollingUnits.js"></script>

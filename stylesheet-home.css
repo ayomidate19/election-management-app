@@ -1,0 +1,185 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* --- Hero Section Styling --- */
+.hero-banner {
+  background-image: url('images/inec-bg.jpg'); /* Replace with your coat of arms map background image path */
+  background-size: cover;
+  background-position: center;
+  height: 450px;
+  position: relative;
+}
+
+/* Semi-transparent dark wash over the image */
+.hero-overlay {
+  background-color: rgba(0, 0, 0, 0.65);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+}
+
+.hero-content {
+  max-width: 600px;
+  color: white;
+}
+
+.hero-content h1 {
+  font-size: 32px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  line-height: 1.3;
+  margin-bottom: 25px;
+}
+
+/* Angled Green Button styling */
+.read-more-btn {
+  display: inline-block;
+  background-color: #5cb85c;
+  color: white;
+  text-decoration: none;
+  padding: 12px 35px;
+  font-weight: bold;
+  border-radius: 4px;
+  clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%); /* Gives the slanted edge look */
+  transition: background 0.2s;
+}
+
+.read-more-btn:hover {
+  background-color: #4cae4c;
+}
+
+/* Slider buttons styling */
+.slider-btn {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.slider-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+}
+
+.dot.active {
+  background-color: white;
+}
+
+/* --- Grid Section Styling --- */
+.stats-section {
+  background-color: #0b3c1b; /* Dark INEC green background color */
+  padding: 40px 20px;
+}
+
+/* Creates the grid configuration for the 4 dashboard blocks */
+.stats-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* Style configuration for standard data cards */
+.stat-card {
+  background: rgba(255, 255, 255, 0.15); /* Tinted transparent white layer */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  backdrop-filter: blur(5px);
+}
+
+/* Splitting the card: Main data container on top */
+.card-main {
+  padding: 25px 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: white;
+  flex-grow: 1;
+}
+
+.card-main .icon {
+  font-size: 28px;
+  opacity: 0.8;
+}
+
+.card-main .number {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+/* Splitting the card: Solid header background on bottom label */
+.card-footer {
+  background-color: rgba(0, 0, 0, 0.25);
+  padding: 12px 20px;
+  color: #dcdcdc;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Rule overrides specific to Card 4 (Elections slide item) */
+.header-style {
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 15px;
+}
+
+.header-style h3 {
+  font-size: 15px;
+  font-weight: normal;
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+
+.font-center {
+  text-align: center;
+}
+
+.mini-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.m-dot {
+  width: 6px;
+  height: 6px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+}
+
+.m-dot.active {
+  background-color: white;
+}
+
+
+
+
+
+
+
