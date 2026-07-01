@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "test.js",
-  "scripts": {
+    "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "test.js",
+    "build": "npx prisma migrate deploy",
+    "start": "node test.js",
     "dev": "nodemon test.js"
   },
   "keywords": [],
