@@ -6,7 +6,7 @@ const { PrismaClient } = require('@prisma/client');
 const app = express();
 // 2. Initialize the client to talk to your dev.db file
 const prisma = new PrismaClient();
-const PORT = 9000;
+const PORT = process.env.PORT || 9000;
 
 // Set up template layouts engine
 app.set('view engine', 'ejs');
