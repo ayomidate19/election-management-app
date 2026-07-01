@@ -1,102 +1,102 @@
 <link rel="stylesheet" href="/stylesheet-home.css">
 
-<!-- views/Home.ejs -->
-<div class="inec-page-wrapper">
-
-  <!-- 1. Top Green Address Banner -->
-  <div class="inec-top-banner">
-    <div class="banner-left-address">
-      <span class="location-icon">📍</span> Address: Plot 436 Zambezi Crescent, Maitama District, FCT, Abuja, NIGERIA
-    </div>
-    <div class="banner-right-socials">
-      <!-- Social Media Anchors placed on the right edge -->
-      <a href="#" class="social-btn facebook-btn">f</a>
-      <a href="#" class="social-btn twitter-btn">𝕏</a>
-      <a href="#" class="social-btn instagram-btn">📷</a>
-      <a href="#" class="social-btn youtube-btn">▶</a>
-    </div>
-  </div>
-
-  <!-- 2. Main Logo Header -->
-  <header class="inec-main-header">
-    <div class="inec-branding-logo">
-      <img src="/images/inec-logo.png" alt="INEC Logo" class="brand-img-asset">
-      <div class="brand-text-container">
-        <h1 class="brand-title-main">INDEPENDENT</h1>
-        <p class="brand-subtitle-sub">National Electoral Commission</p>
-      </div>
-    </div>
-  </header>
-
-  <!-- 3. Top Navigation Link Bar -->
-  <nav class="inec-navigation-bar">
-    <ul class="nav-links-list">
-      <li class="nav-item active"><a href="#">Home</a></li>
-      <li class="nav-item dropdown"><a href="#">About ▾</a></li>
-      <li class="nav-item dropdown"><a href="#">Office of The Chairman ▾</a></li>
-      <li class="nav-item dropdown"><a href="#">Voter Education ▾</a></li>
-      <li class="nav-item dropdown"><a href="#">Political Parties ▾</a></li>
-      <li class="nav-item dropdown emphasis-green-tab"><a href="#">Elections ▾</a></li>
-      <li class="nav-item dropdown"><a href="#">Voter Registration ▾</a></li>
-      <li class="nav-item dropdown"><a href="#">Resources ▾</a></li>
-      <li class="nav-item"><a href="#">Contact Us</a></li>
-      <li class="nav-item search-icon-item"><a href="#">🔍</a></li>
-    </ul>
-  </nav>
-
-  <!-- 4. Grey Section Page Title Banner -->
-  <section class="inec-title-hero-banner">
-    <h2 class="hero-page-heading">Polling Units</h2>
-  </section>
-
-  <!-- 5. Main Content Wrapper (Split-Screen Column Layout) -->
-  <main class="inec-content-split-layout">
-    
-    <!-- Left Column: Tool Description and Dropdowns -->
-    <section class="main-left-column-content">
-      <p class="inec-descriptive-paragraph">
-        At a polling unit, a citizen can either register to vote or vote. It is advisable to select a Polling Unit close to your area of residence due to the restricted movement on election days.
-      </p>
-      
-      <p class="inec-descriptive-paragraph">
-        You can locate your polling unit by using the Polling Unit Locator Tool.
-      </p>
-
-      <div class="lookup-steps-container">
-        <p class="steps-heading-text">To view your polling unit, follow the steps below;</p>
-        <ol class="ordered-steps-list">
-          <li class="step-list-item">Select State <span class="step-helper-instruction">(This is the state you would be voting in)</span></li>
-          <li class="step-list-item">Select LGA <span class="step-helper-instruction">(This is the LGA in which you live)</span></li>
-          <li class="step-list-item">Select Ward</li>
-          <li class="step-list-item">Click "Search"</li>
-        </ol>
-      </div>
-
-      <!-- EJS Dropdown Select Form -->
-      <form action="/search-polling-units" method="GET" class="inec-lookup-dropdown-form">
-        <div class="custom-select-wrapper">
-          <select name="state" class="inec-interactive-dropdown-select">
-            <option value="">Choose State</option>
-            <!-- Add state options dynamically if needed -->
-          </select>
-        </div>
-      </form>
-    </section>
-
-    <!-- Right Column: Sidebar Information Green Card Box -->
-    <aside class="sidebar-right-column-panel">
-      <div class="inec-information-sidebar-card">
-        <h3 class="sidebar-card-title-heading">INFORMATION</h3>
-        <ul class="sidebar-links-bullet-list">
-          <li class="sidebar-bullet-item"><a href="#">INEC Portals</a></li>
-          <li class="sidebar-bullet-item"><a href="#">INEC Youth Ambassadors</a></li>
-          <li class="sidebar-bullet-item"><a href="#">Election Officials</a></li>
-          <li class="sidebar-bullet-item"><a href="#">Election Management Bodies</a></li>
-          <li class="sidebar-bullet-item"><a href="#">INEC State and LGA Offices</a></li>
+<header>
+    <nav>
+        <ul>
+            <li><a href="/index">LOG IN</a></li>
+            <li><a href="/about">About</a></li>
         </ul>
-      </div>
-    </aside>
+    </nav>
+    <hr>
+    <h1>Election Management App</h1>
+</header>
 
-  </main>
+<!-- 1. Hero Image Banner Section -->
+<div class="hero-banner">
+    <div class="hero-overlay">
+        <button class="slider-btn prev-btn">&#10094;</button>
+        
+        <div class="hero-content">
+            <h1>LIST OF CANDIDATES FOR 20TH JUNE BYE-ELECTIONS</h1>
+            <a href="#" class="read-more-btn">Read More</a>
+        </div>
 
+        <button class="slider-btn next-btn">&#10095;</button>
+    </div>
+
+    <!-- Slider dots indicators at the bottom -->
+    <div class="slider-dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
 </div>
+
+<!-- 2. Statistics Grid Section -->
+<div class="stats-section">
+    <div class="stats-container">
+
+        <!-- Box 1: Total Voters -->
+        <div class="stat-card">
+            <div class="card-main">
+                <span class="icon">&#128196;</span>
+                <span class="number">93,469,008</span>
+            </div>
+            <div class="card-footer">Total Voters Registered</div>
+        </div>
+
+        <!-- Box 2: Polling Units -->
+        <div class="stat-card">
+            <div class="card-main">
+                <span class="icon">&#127988;</span>
+                <span class="number">176,846</span>
+            </div>
+            <div class="card-footer">Polling Units in Nigeria</div>
+        </div>
+
+        <!-- Box 3: Parties -->
+        <div class="stat-card">
+            <div class="card-main">
+                <span class="icon">&#10134;</span>
+                <span class="number">22</span>
+            </div>
+            <div class="card-footer">Registered Political Parties</div>
+        </div>
+
+        <!-- Box 4: Next Elections Slider -->
+        <div class="stat-card unique-card">
+            <div class="card-main header-style">
+                <h3>Ekiti Governorship Election (June 20, 2026)</h3>
+                <div class="mini-dots">
+                    <span class="m-dot active"></span>
+                    <span class="m-dot"></span>
+                    <span class="m-dot"></span>
+                </div>
+            </div>
+            <div class="card-footer font-center">Next Elections</div>
+        </div>
+
+    </div>
+</div>
+    
+        <h3>Election Party</h3>
+    <ul style="list-style: none; display: flex; gap: 15px; flex-wrap: wrap; padding: 0;">
+        <% parties.forEach(party => { %>
+            <li style="display: flex; flex-direction: column; align-items: center; width: 120px; text-align: center; border: 1px solid #ddd; padding: 10px; border-radius: 6px; background-color: #fff;">
+                <% if (party.imagePath && !party.imagePath.includes('default.png') && !party.imagePath.startsWith('http')) { %>
+    <img src="<%= party.imagePath %>" height="40" width="40" alt="<%= party.name %> Logo" style="object-fit: contain; border-radius: 4px;">
+<% } else { %>
+    <!-- Displays a clean, localized colored text bubble completely offline -->
+    <div style="height: 40px; width: 40px; background-color: #005f00; color: #fff; display: flex; align-items: center; justify-content: center; font-weight: bold; border-radius: 4px; font-size: 14px;">
+        <%= party.acronym.substring(0, 3) %>
+    </div>
+<% } %>
+
+                <strong style="font-size: 14px; margin-top: 5px; color: #333;"><%= party.acronym %></strong>
+                <span style="font-size: 11px; color: #666; margin-top: 2px;"><%= party.name %></span>
+            </li>
+        <% }) %>
+    </ul>

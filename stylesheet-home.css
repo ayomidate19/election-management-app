@@ -1,228 +1,185 @@
-* /* 1. Global Core Settings & Branding Variables */
-:root {
-  --inec-brand-green: #115c2e;
-  --inec-dark-green: #0a3c1e;
-  --inec-accent-light-green: #48b86d;
-  --inec-text-dark: #333333;
-  --inec-text-gray: #555555;
-  --inec-bg-grey-banner: #b0b5b3;
-  --inec-border-light: #e2e8f0;
-}
-
-body {
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   font-family: Arial, sans-serif;
-  color: var(--inec-text-dark);
-  background-color: #ffffff;
 }
 
-/* 2. Top Info Banner Ribbon */
-.inec-top-banner {
-  background-color: var(--inec-dark-green);
-  color: #ffffff;
-  font-size: 12px;
-  padding: 10px 4%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 2px solid var(--inec-accent-light-green);
-}
-.banner-right-socials {
-  display: flex;
-  gap: 8px;
-}
-.social-btn {
-  color: #ffffff;
-  text-decoration: none;
-  background-color: rgba(255, 255, 255, 0.15);
-  width: 22px;
-  height: 22px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 3px;
-  font-size: 11px;
+/* --- Hero Section Styling --- */
+.hero-banner {
+  background-image: url('images/inec-bg.jpg'); /* Replace with your coat of arms map background image path */
+  background-size: cover;
+  background-position: center;
+  height: 450px;
+  position: relative;
 }
 
-/* 3. Branding Logo Header Area */
-.inec-main-header {
-  padding: 20px 4%;
-  background-color: #ffffff;
-}
-.inec-branding-logo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-.brand-img-asset {
-  height: 55px;
-  width: auto;
-}
-.brand-title-main {
-  margin: 0;
-  font-size: 20px;
-  font-weight: bold;
-  letter-spacing: 0.5px;
-  color: #111111;
-}
-.brand-subtitle-sub {
-  margin: 2px 0 0 0;
-  font-size: 12px;
-  color: var(--inec-text-gray);
-}
-
-/* 4. Global Navigation Menu */
-.inec-navigation-bar {
-  border-top: 1px solid var(--inec-border-light);
-  border-bottom: 1px solid var(--inec-border-light);
-  background-color: #ffffff;
-}
-.nav-links-list {
-  list-style: none;
-  margin: 0;
-  padding: 0 4%;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  height: 48px;
-}
-.nav-item a {
-  text-decoration: none;
-  color: var(--inec-text-dark);
-  font-size: 13px;
-  font-weight: 500;
-}
-.nav-item.active a {
-  color: var(--inec-brand-green);
-}
-.emphasis-green-tab {
-  background-color: var(--inec-accent-light-green);
-  padding: 0 14px;
+/* Semi-transparent dark wash over the image */
+.hero-overlay {
+  background-color: rgba(0, 0, 0, 0.65);
+  width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
-}
-.emphasis-green-tab a {
-  color: #ffffff;
-}
-.search-icon-item {
-  margin-left: auto;
+  justify-content: space-between;
+  padding: 0 40px;
 }
 
-/* 5. Polling Units Section Grey Header Banner */
-.inec-title-hero-banner {
-  background-color: var(--inec-bg-grey-banner);
-  background-image: linear-gradient(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05));
-  text-align: center;
-  padding: 40px 20px;
+.hero-content {
+  max-width: 600px;
+  color: white;
 }
-.hero-page-heading {
-  margin: 0;
-  color: #ffffff;
+
+.hero-content h1 {
   font-size: 32px;
   font-weight: bold;
   letter-spacing: 1px;
+  line-height: 1.3;
+  margin-bottom: 25px;
 }
 
-/* 6. Main Split Screen Grid Engine Layout */
-.inec-content-split-layout {
-  max-width: 1200px;
-  margin: 40px auto;
-  padding: 0 4%;
-  display: grid;
-  grid-template-columns: 2.5fr 1fr; /* Splitting left lookup tools & right informational banner card */
-  gap: 40px;
-}
-
-/* 7. Left Column Interface Styles */
-.inec-descriptive-paragraph {
-  font-size: 14px;
-  line-height: 1.6;
-  color: var(--inec-text-dark);
-  margin-bottom: 20px;
-}
-.lookup-steps-container {
-  margin-top: 25px;
-}
-.steps-heading-text {
-  font-size: 14px;
+/* Angled Green Button styling */
+.read-more-btn {
+  display: inline-block;
+  background-color: #5cb85c;
+  color: white;
+  text-decoration: none;
+  padding: 12px 35px;
   font-weight: bold;
-  margin-bottom: 12px;
-}
-.ordered-steps-list {
-  padding-left: 20px;
-  margin-bottom: 30px;
-}
-.step-list-item {
-  font-size: 14px;
-  margin-bottom: 10px;
-}
-.step-helper-instruction {
-  color: #777777;
-  font-style: italic;
-  font-size: 13px;
-}
-.inec-interactive-dropdown-select {
-  width: 260px;
-  padding: 8px 12px;
-  font-size: 13px;
-  border: 1px solid #cccccc;
   border-radius: 4px;
-  background-color: #ffffff;
-  color: #555555;
-  outline: none;
+  clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%); /* Gives the slanted edge look */
+  transition: background 0.2s;
+}
+
+.read-more-btn:hover {
+  background-color: #4cae4c;
+}
+
+/* Slider buttons styling */
+.slider-btn {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  font-size: 18px;
   cursor: pointer;
 }
 
-/* 8. Right Side Column Green Panel Styles */
-.inec-information-sidebar-card {
-  background-color: var(--inec-accent-light-green);
-  border-radius: 8px;
-  padding: 24px;
-  color: #ffffff;
-}
-.sidebar-card-title-heading {
-  margin: 0 0 20px 0;
-  font-size: 16px;
-  font-weight: bold;
-  letter-spacing: 0.5px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  padding-bottom: 10px;
-}
-.sidebar-links-bullet-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.sidebar-bullet-item {
-  margin-bottom: 15px;
-  padding-left: 12px;
-  position: relative;
-  font-size: 14px;
-}
-.sidebar-bullet-item::before {
-  content: "•";
+.slider-dots {
   position: absolute;
-  left: 0;
-  color: #ffffff;
-}
-.sidebar-bullet-item a {
-  color: #ffffff;
-  text-decoration: none;
-}
-.sidebar-bullet-item a:hover {
-  text-decoration: underline;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
 }
 
-/* 9. Mobile Responsiveness Breakpoint Rule */
-@media (max-width: 768px) {
-  .inec-content-split-layout {
-    grid-template-columns: 1fr; /* Collapses to single vertical stacked layout on mobile tablets */
-    gap: 30px;
-  }
-  .nav-links-list {
-    overflow-x: auto;
-    white-space: nowrap;
-  }
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
 }
+
+.dot.active {
+  background-color: white;
+}
+
+/* --- Grid Section Styling --- */
+.stats-section {
+  background-color: #0b3c1b; /* Dark INEC green background color */
+  padding: 40px 20px;
+}
+
+/* Creates the grid configuration for the 4 dashboard blocks */
+.stats-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* Style configuration for standard data cards */
+.stat-card {
+  background: rgba(255, 255, 255, 0.15); /* Tinted transparent white layer */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  backdrop-filter: blur(5px);
+}
+
+/* Splitting the card: Main data container on top */
+.card-main {
+  padding: 25px 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: white;
+  flex-grow: 1;
+}
+
+.card-main .icon {
+  font-size: 28px;
+  opacity: 0.8;
+}
+
+.card-main .number {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+/* Splitting the card: Solid header background on bottom label */
+.card-footer {
+  background-color: rgba(0, 0, 0, 0.25);
+  padding: 12px 20px;
+  color: #dcdcdc;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Rule overrides specific to Card 4 (Elections slide item) */
+.header-style {
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 15px;
+}
+
+.header-style h3 {
+  font-size: 15px;
+  font-weight: normal;
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+
+.font-center {
+  text-align: center;
+}
+
+.mini-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.m-dot {
+  width: 6px;
+  height: 6px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+}
+
+.m-dot.active {
+  background-color: white;
+}
+
+
+
+
+
+
+
