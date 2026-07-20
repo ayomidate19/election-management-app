@@ -10,12 +10,20 @@ const PORT = process.env.PORT || 9000;
 
 // Set up template layouts engine
 app.set('view engine', 'ejs');
+// ... upper lines stay exactly the same (lines 1 - 11)
+
+// Set up template layouts engine
+app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
+
+// Enable form data processing (ADD THIS LINE HERE)
+app.use(express.urlencoded({ extended: true }));
 
 // Deliver static files (CSS files and static local images)
 app.use(express.static(path.join(__dirname)));
 
-// Change this block in your test.js file
+// ... rest of your code stays exactly the same
+
 app.get('/', async (req, res) => {
     try {
         const parties = await prisma.party.findMany(); // Fetches from your SQLite file

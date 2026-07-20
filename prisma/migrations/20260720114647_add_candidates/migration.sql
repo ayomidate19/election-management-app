@@ -1,0 +1,7 @@
+-- CreateTable
+CREATE TABLE "Candidate" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "name" TEXT NOT NULL,
+    "partyId" INTEGER NOT NULL,
+    CONSTRAINT "Candidate_partyId_fkey" FOREIGN KEY ("partyId") REFERENCES "Party" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
+);

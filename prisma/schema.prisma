@@ -7,12 +7,12 @@ generator client {
   provider = "prisma-client-js"
 }
 
-
 model Party {
-  id        Int    @id @default(autoincrement())
+  id        Int         @id @default(autoincrement())
   name      String
-  acronym   String @unique // For example: APC, PDP, LLP
-  imagePath String // The link path like "images/APC.jpeg"
+  acronym   String      @unique // For example: APC, PDP, LP
+  imagePath String      // The link path like "images/APC.jpeg"
+  candidates Candidate[] // ADD THIS LINE HERE to link candidates
 }
 
 model PollingUnit {
@@ -20,4 +20,12 @@ model PollingUnit {
   name      String  // Name of the polling unit
   sheetCode String  @unique // To map with your sheet views
   isReady   Boolean @default(false) // Whether results are fully counted
+}
+
+// PASTE THIS NEW MODEL AT THE BOTTOM
+model Candidate {
+  id      Int    @id @default(autoincrement())
+  name    String
+  partyId Int
+  party   Party  @relation(fields: [partyId], references: [id])
 }
